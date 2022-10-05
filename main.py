@@ -15,7 +15,7 @@ HUNGARY_COUNTRY_CODE = "HU"
 ryanair = Ryanair("DKK")
 
 
-# True, if going to BUD (Hungary), false if going to BIL (Denmark)
+# True, if going to BUD (Hungary), false if going to BLL (Denmark)
 def request_flights(to_bud):
     # I am not sure, how many days ahead can I see flights to Budapest, so I decided that it is going to be 180 days,
     # because that is close to my observations
@@ -52,7 +52,7 @@ def write_flights(to_bud, flights):
     today = datetime.today()
     json_object = json.dumps(flights, indent=2)
     with open(f"C:/Users/kandr/PycharmProjects/RyanairScraper/flights_data/{today.year}-"
-              f"{today.month:02d}-{today.day:02d}-{'BUD' if to_bud else 'BIL'}.json", "w") as outfile:
+              f"{today.month:02d}-{today.day:02d}-{'BUD' if to_bud else 'BLL'}.json", "w") as outfile:
         outfile.write(json_object)
 
 
